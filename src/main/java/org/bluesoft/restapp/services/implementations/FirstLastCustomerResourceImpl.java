@@ -4,6 +4,8 @@ import org.bluesoft.restapp.domain.Customer;
 import org.bluesoft.restapp.services.intrfaces.FirstLastCustomerResource;
 
 import javax.ejb.Stateless;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.Response;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -31,7 +33,10 @@ public class FirstLastCustomerResourceImpl implements FirstLastCustomerResource 
     }
 
     @Override
-    public Response getCustomer(String firstName, String lastName) {
+    public Response getCustomer(String firstName, String lastName,
+                                HttpHeaders headers) {
+
+        String token = headers.getRequestHeader("token").get(0);
 
         final Customer customer = customerDB.get(firstName + "-" + lastName);
 
@@ -39,7 +44,7 @@ public class FirstLastCustomerResourceImpl implements FirstLastCustomerResource 
             return Response.status(Response.Status.NOT_FOUND).entity("We cannot find customer whose name is " + firstName).build();
         }
 
-        return Response.ok().entity(customer).build();
+        return Response.ok().entity(customer + " token " + token).build();
     }
 
     @Override
