@@ -1,9 +1,12 @@
 package org.bluesoft.restapp.services;
 
+import org.bluesoft.restapp.domain.Customer;
 import org.bluesoft.restapp.domain.CustomerJSON;
 
+import javax.persistence.EntityNotFoundException;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.NewCookie;
 import javax.ws.rs.core.Response;
 
 @Path("/json")
@@ -17,7 +20,21 @@ public class JsonResources {
         json.setFirstName("Janusz");
         json.setLastName("Stolorz");
 
-        return Response.ok().entity(json).build();
+        Response.ResponseBuilder builder = Response.ok(json);
+        builder.language("fr")
+                .header("Some-Header","some value");
+
+
+
+        NewCookie cookie = new NewCookie("key","value");
+
+//        boolean flag = true;
+//        if(flag){
+//            throw new EntityNotFoundException();
+//        }
+
+
+        return builder.cookie(cookie).build();
     }
 
     @POST

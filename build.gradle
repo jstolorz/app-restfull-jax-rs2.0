@@ -20,19 +20,22 @@ dependencies {
 //    // https://mvnrepository.com/artifact/org.w3c/dom
 //    compile group: 'org.w3c', name: 'dom', version: '2.3.0-jaxb-1.0.6'
 //    // https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-client
-//    compile group: 'org.jboss.resteasy', name: 'resteasy-client', version: '3.6.2.Final'
+     compile group: 'org.jboss.resteasy', name: 'resteasy-client', version: '3.6.2.Final'
+    // https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-jackson2-provider
+    compile group: 'org.jboss.resteasy', name: 'resteasy-jackson2-provider', version: '3.6.2.Final'
+
 //
 //    // https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-jaxrs
-//    compile group: 'org.jboss.resteasy', name: 'resteasy-jaxrs', version: '3.6.2.Final'
+     compile group: 'org.jboss.resteasy', name: 'resteasy-jaxrs', version: '3.6.2.Final'
 //
 //    // https://mvnrepository.com/artifact/org.jboss.resteasy/async-http-servlet-3.0
-//    compile group: 'org.jboss.resteasy', name: 'async-http-servlet-3.0', version: '3.0.19.Final'
+      compile group: 'org.jboss.resteasy', name: 'async-http-servlet-3.0', version: '3.0.19.Final'
 //
 //    // https://mvnrepository.com/artifact/org.jboss.resteasy/jaxrs-api
-//    compile group: 'org.jboss.resteasy', name: 'jaxrs-api', version: '3.0.12.Final'
+    compile group: 'org.jboss.resteasy', name: 'jaxrs-api', version: '3.0.12.Final'
 //
 //    // https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-servlet-initializer
-//    compile group: 'org.jboss.resteasy', name: 'resteasy-servlet-initializer', version: '3.6.2.Final'
+     compile group: 'org.jboss.resteasy', name: 'resteasy-servlet-initializer', version: '3.6.2.Final'
 
     
     testCompile group: 'junit', name: 'junit', version: '4.11'

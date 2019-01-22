@@ -1,5 +1,6 @@
 package org.bluesoft.restapp.services.intrfaces;
 
+import org.bluesoft.restapp.annotations.Pretty;
 import org.bluesoft.restapp.domain.Customer;
 
 import javax.ws.rs.*;
@@ -16,6 +17,7 @@ public interface CustomerResource {
     @GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_XML)
+    @Pretty
     Response getCustomer(@PathParam("id") int id);
 
 
